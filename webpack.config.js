@@ -16,8 +16,8 @@ module.exports = {
   },
   output: {
     path: outputPath,
-    filename: '[name].bundle.js'
-    // sourceMapFilename: '[name].map',
+    filename: '[name].bundle.js',
+    sourceMapFilename: '[name].bundle.map'
     // chunkFilename: '[id].chunk.js'
   },
   module: {
@@ -42,7 +42,6 @@ module.exports = {
     ]
   },
   devServer: {
-    progress: true,
     contentBase: outputPath,
     outputPath: outputPath
   },

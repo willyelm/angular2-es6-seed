@@ -1,14 +1,17 @@
 'use strict'
 
 module.exports = function (config) {
-  var sourcePath = './app'
+  var sourcePath = './src'
   config.set({
-    basePath: '.',
+    basePath: sourcePath,
     files: [
-      'karma.shim.js'
+      'polyfills.browser.js',
+      'vendor.browser.js',
+      '../karma.shim.js'
     ],
     preprocessors: {
-      'karma.shim.js': ['webpack']
+      '*.browser.js': ['webpack'],
+      '../karma.shim.js': ['webpack']
     },
     webpack: {
       cache: true,
@@ -21,8 +24,12 @@ module.exports = function (config) {
           exclude: /(node_modules)/,
           loader: 'babel',
           query: {
-            presets: ['es2015']
+            presets: ['es2015'],
+            plugins: ['transform-decorators-legacy']
           }
+        }, {
+          test: /\.html$/,
+          loader: 'raw'
         }]
       },
       resolve: {
@@ -31,6 +38,12 @@ module.exports = function (config) {
           'node_modules',
           sourcePath
         ]
+      }
+    },
+    webpackMiddleware: {
+      stats: {
+        progress: true,
+        colors: true
       }
     },
     autoWatch: true,
