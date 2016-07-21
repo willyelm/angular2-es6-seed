@@ -10,7 +10,7 @@ const routes = [
   { path: 'home', component: Home },
   { path: 'about', component: About },
   { path: 'github', component: RepoBrowser, children: [
-    { path: ':org', component: RepoList, children: [
+    { path: ':userName', component: RepoList, children: [
       { path: ':repo', component: RepoDetail },
       { path: '', component: RepoDetail }
     ]},

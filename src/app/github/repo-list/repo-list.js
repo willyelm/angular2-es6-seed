@@ -21,9 +21,9 @@ export class RepoList {
 
   ngOnInit () {
     this.route.params.subscribe(params => {
-      this.org = params['org']
-      if (this.org) {
-        this.repos = this.github.getReposForOrg(this.org)
+      this.userName = params['userName']
+      if (this.userName) {
+        this.repos = this.github.getReposForUser(this.userName)
       }
     })
   }

@@ -28,7 +28,7 @@ module.exports = function (config) {
             plugins: ['transform-decorators-legacy']
           }
         }, {
-          test: /\.html$/,
+          test: /\.(html|css)$/,
           loader: 'raw'
         }]
       },

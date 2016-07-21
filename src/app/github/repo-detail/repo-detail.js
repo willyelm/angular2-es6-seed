@@ -23,12 +23,12 @@ export class RepoDetail {
 
   ngOnInit () {
     this.route.params.subscribe(params => {
-      this.org = this.router.routerState.parent(this.route).snapshot.params['org']
+      this.userName = this.router.routerState.parent(this.route).snapshot.params['userName']
       this.repo = params['repo'] || ''
       if (this.repo) {
         this
           .github
-          .getRepoForOrg(this.org, this.repo)
+          .getRepoForUser(this.userName, this.repo)
           .subscribe(repoDetails => {
             this.repoDetails = repoDetails
           })

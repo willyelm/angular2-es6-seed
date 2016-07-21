@@ -30,7 +30,7 @@ module.exports = {
         plugins: ['transform-decorators-legacy']
       }
     }, {
-      test: /\.html$/,
+      test: /\.(html|css)$/,
       loader: 'raw'
     }]
   },
@@ -52,7 +52,7 @@ module.exports = {
     }),
     new CopyWebpackPlugin([{
       context: sourcePath,
-      from: '**/*.{html,css}'
+      from: ['src/index.html', 'src/main.css']
     }]),
     new webpack.NoErrorsPlugin()
   ]

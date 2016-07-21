@@ -9,16 +9,16 @@ export class Github {
     this.http = http
   }
 
-  getOrg (org) {
-    return this.makeRequest(`orgs/${org}`)
+  getUser (userName) {
+    return this.makeRequest(`users/${userName}`)
   }
 
-  getReposForOrg (org) {
-    return this.makeRequest(`orgs/${org}/repos`)
+  getReposForUser (userName) {
+    return this.makeRequest(`users/${userName}/repos`)
   }
 
-  getRepoForOrg (org, repo) {
-    return this.makeRequest(`repos/${org}/${repo}`)
+  getRepoForUser (userName, repo) {
+    return this.makeRequest(`repos/${userName}/${repo}`)
   }
 
   makeRequest (path) {

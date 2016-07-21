@@ -18,12 +18,12 @@ export class RepoBrowser {
     this.github = github
   }
 
-  searchForOrg (orgName) {
+  searchForUser (userName) {
     this
       .github
-      .getOrg(orgName)
+      .getUser(userName)
       .subscribe(({name}) => {
-        this.router.navigate(['/github', orgName])
+        this.router.navigate(['/willyelm', userName])
       })
   }
 }
