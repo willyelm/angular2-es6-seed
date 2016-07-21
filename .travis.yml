@@ -13,4 +13,4 @@ before_script:
 
 script:
   - npm test -- --browsers=Firefox --single-run
-  - npm run protractor -- --browser=firefox
+  - # npm run protractor -- --browser=firefox
