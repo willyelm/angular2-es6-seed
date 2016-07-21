@@ -2,6 +2,7 @@
 'use strict'
 
 describe('my app', () => {
+  // Home Component
   describe('home', () => {
     beforeEach(() => {
       browser.get('#/home')
@@ -12,7 +13,7 @@ describe('my app', () => {
       expect(homeElement.getText()).toMatch(/Welcome to Angular Seed/)
     })
   })
-
+  // About Component
   describe('about', () => {
     beforeEach(() => {
       browser.get('#/about')
