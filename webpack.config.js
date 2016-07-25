@@ -52,7 +52,10 @@ module.exports = {
     }),
     new CopyWebpackPlugin([{
       context: sourcePath,
-      from: ['src/index.html', 'src/main.css']
+      from: 'src/main.css'
+    }, {
+      context: sourcePath,
+      from: 'src/index.html'
     }]),
     new webpack.NoErrorsPlugin()
   ]
