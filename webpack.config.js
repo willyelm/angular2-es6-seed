@@ -9,6 +9,7 @@ var isProduction = process.env.NODE_ENV === 'production'
 module.exports = {
   devtool: isProduction ? 'source-map' : 'eval',
   cache: true,
+  context: sourcePath,
   entry: {
     'polyfills': path.join(sourcePath, 'polyfills.browser.js'),
     'vendor': path.join(sourcePath, 'vendor.browser.js'),
@@ -51,11 +52,9 @@ module.exports = {
       minChunks: Infinity
     }),
     new CopyWebpackPlugin([{
-      context: sourcePath,
-      from: 'src/main.css'
+      from: 'index.html'
     }, {
-      context: sourcePath,
-      from: 'src/index.html'
+      from: 'main.css'
     }]),
     new webpack.NoErrorsPlugin()
   ]
