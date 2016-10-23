@@ -1,12 +1,11 @@
 import { Component } from '@angular/core'
-import { Router, ROUTER_DIRECTIVES } from '@angular/router'
+import { Router } from '@angular/router'
 import { Github } from 'app/github/shared/github'
 
 @Component({
   selector: 'repo-browser',
   pipes: [],
   providers: [ Github ],
-  directives: [ ROUTER_DIRECTIVES ],
   template: require('./repo-browser.html')
 })
 
@@ -23,7 +22,7 @@ export class RepoBrowser {
       .github
       .getUser(userName)
       .subscribe(({name}) => {
-        this.router.navigate(['/willyelm', userName])
+        this.router.navigate(['/github', userName])
       })
   }
 }

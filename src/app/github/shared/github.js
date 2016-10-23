@@ -4,6 +4,7 @@ import 'rxjs/add/operator/map'
 
 @Injectable()
 @Reflect.metadata('design:paramtypes', [Http])
+
 export class Github {
   constructor (http) {
     this.http = http

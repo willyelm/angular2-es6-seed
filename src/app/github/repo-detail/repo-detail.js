@@ -1,12 +1,11 @@
 import {Component} from '@angular/core'
-import {ROUTER_DIRECTIVES, ActivatedRoute, Router} from '@angular/router'
+import {ActivatedRoute, Router} from '@angular/router'
 import {Github} from 'app/github/shared/github'
 
 @Component({
   selector: 'repo-detail',
   pipes: [],
   providers: [],
-  directives: [ROUTER_DIRECTIVES],
   template: require('./repo-detail.html')
 })
 

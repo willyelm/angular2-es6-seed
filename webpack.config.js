@@ -36,7 +36,7 @@ module.exports = {
     }]
   },
   resolve: {
-    root: [sourcePath],
+    // root: [sourcePath],
     modules: [
       'node_modules',
       sourcePath
@@ -56,6 +56,10 @@ module.exports = {
     }, {
       from: 'main.css'
     }]),
+    new webpack.ContextReplacementPlugin(
+      /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
+      __dirname
+    ),
     new webpack.NoErrorsPlugin()
   ]
 }

@@ -1,13 +1,12 @@
 import {Component} from '@angular/core'
 import {Github} from 'app/github/shared/github'
 // import {Observable} from 'rxjs/Observable'
-import {ROUTER_DIRECTIVES, ActivatedRoute} from '@angular/router'
+import {ActivatedRoute} from '@angular/router'
 
 @Component({
   selector: 'repo-list',
   pipes: [],
   providers: [],
-  directives: [ ROUTER_DIRECTIVES ],
   template: require('./repo-list.html')
 })
 
